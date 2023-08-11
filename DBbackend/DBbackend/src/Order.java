@@ -1,38 +1,31 @@
+import javax.persistence.Entity;
+
+@Entity
 public class Order {
 
-    String OrderId;
-    String VendorId;
-    String ProductId;
+    User UserthatOrdered;
+    //VendorId;
+    Product ProductThatGotOrdered;
 
-    public Order(String orderId, String vendorId, String productId) {
-        OrderId = orderId;
-        VendorId = vendorId;
-        ProductId = productId;
+
+    public Order(User userthatOrdered, Product productThatGotOrdered) {
+        UserthatOrdered = userthatOrdered;
+        ProductThatGotOrdered = productThatGotOrdered;
     }
 
-  //  @GeneratedValue
-
-    public String getOrderId() {
-        return OrderId;
+    public User getUserthatOrdered() {
+        return UserthatOrdered;
     }
 
-    public void setOrderId(String orderId) {
-        OrderId = orderId;
+    public void setUserthatOrdered(User userthatOrdered) {
+        UserthatOrdered = userthatOrdered;
     }
 
-    public String getVendorId() {
-        return VendorId;
+    public Product getProductThatGotOrdered() {
+        return ProductThatGotOrdered;
     }
 
-    public void setVendorId(String vendorId) {
-        VendorId = vendorId;
-    }
-
-    public String getProductId() {
-        return ProductId;
-    }
-
-    public void setProductId(String productId) {
-        ProductId = productId;
+    public void setProductThatGotOrdered(Product productThatGotOrdered) {
+        ProductThatGotOrdered = productThatGotOrdered;
     }
 }
