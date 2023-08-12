@@ -1,7 +1,6 @@
 import React, { useEffect , useState} from 'react'
 import '../components/Main.css'
 import GameCard from '../components/GameCard';
-import API_KEY from '../models/ApiConfig';
 import api from '../models/ApiURL';
 import GameCardSkeleton from '../components/SkeletonComponents/GameCardSkeleton';
 
@@ -12,7 +11,7 @@ function NewReleases() {
   const [isLoading , setIsLoading] = useState(true);
 
   useEffect(() => {
-    api.get(`/games?ordering=released&&key=${API_KEY}`)
+    api.get(`/orders`)
     .then(res => {
       setGameData(res.data['results']);
       setIsLoading(false);
