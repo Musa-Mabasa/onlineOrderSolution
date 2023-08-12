@@ -1,0 +1,94 @@
+/* .searchbar{
+    width: 500px;
+    height: 70px;
+}
+
+.searchInput{
+    display: flex;
+}
+
+.searchbar input{
+    background-color: #092746;
+    color: white;
+    height: 1rem;
+    width: 100%;
+    border-color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+
+
+}
+
+.searchbar button{
+    background-color: #186fbc;
+    padding: 10px;
+    border-color: black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+} */
+
+
+/* Searchbar.css */
+
+.searchbar {
+    width: 600px
+  }
+  
+  .searchInput {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgb(181, 180, 180);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 40px;
+  }
+  
+  .searchbar input {
+    color: #000;
+    height: 30px;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  
+  .searchbar button {
+    background-color: rgb(181, 180, 180);
+    color: white;
+    height: 50px; /* Set the button height to match the input height */
+    padding: 0 20px; /* Adjust the button padding */
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Additional styles for the data result container */
+  .dataresult {
+    background-color: #092746;
+    color: white;
+    padding: 10px;
+    border: 2px solid #186fbc;
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Optional: Apply a box-shadow for a more prominent look */
+  .searchInput {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media screen and (max-width: 769px){
+    .searchbar {
+        width: 90%
+      }
+}

@@ -1,0 +1,77 @@
+
+.page{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+   }
+
+.cover{
+    background-color: white;
+    width: 20em;
+    height: 25em;
+    position: relative;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.cover-image{
+    background: url("https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20em;
+    height: 25em;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cover h1{
+    margin-top: 1em;
+    
+}
+
+input{
+    border: none;
+    background-color: rgb(229,226,226);
+    height: 1.5em;
+    width: 80%;
+    border-radius: 0.25em;
+    text-align: center ;
+    padding: 1em;
+}
+
+input:focus{
+    outline-color: rgb(32,177,225);
+}
+
+.login-button{
+    width: 40%;
+    height: 2.5em;
+    border-radius: 0.25em;
+    background-color: rgb(32,177,225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 0.25em;
+    cursor: pointer;
+    margin-bottom: 5em;
+}
+
+.login-button:hover{
+    transform: scale(1.1);
+}
+
+.text{
+    position: relative;
+    bottom: -1em;
+}

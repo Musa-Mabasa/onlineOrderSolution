@@ -1,0 +1,86 @@
+.game-card {
+    height: 370px;
+    width: 320px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .game-card:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .card-image {
+    height: 300px;
+    width: 96%;
+    align-self: flex-start;
+    margin: 10px 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-details {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align the contents to the start (left) of the card */
+  }
+  
+.card-title {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px;
+    margin-bottom: 100px;
+    text-align: start;
+}
+
+.card-genres{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0 10px;
+    text-overflow: ellipsis;
+
+}
+
+.card-genres #genre{
+    height: 25px;
+    width: 100px;
+    background-color: #1d2c3b;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-actions{
+    display: flex;
+    margin: 20px 10px;
+    align-self: flex-start;
+    height: fit-content;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.card-actions h2{
+  font-size: 16px;
+}

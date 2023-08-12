@@ -1,0 +1,190 @@
+.sidebar{
+    position: relative;
+    height: 100vh;
+    width: 300px;
+    background-color: #f4f4f4;
+    transition: 0.3s ease-in-out;
+    z-index: 2;
+    border-right: 1px solid #ccc;
+  }
+  
+  .sidebar-header{
+    display: flex;
+    color: #000;
+    font-size: 25px;
+    padding: 15px 40px;
+    font-weight:bold;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  
+  .sidebarList{
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .sidebarList .row{
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 0 35px 35px 0; 
+    margin-bottom: 10px;
+    text-decoration: none;
+
+  }
+
+  .row:hover{
+    background-color: rgb(181, 180, 180);
+  }
+  
+  .sidebarList .row:hover{
+    cursor: pointer;
+  }
+
+  .sidebarList #active{
+    background-color: rgb(181, 180, 180);
+  }
+
+  
+  /* .sidebarList #active{
+    background-color: #186fbc;
+  } */
+  /* 
+  .row #bar{
+    flex: 10%;
+    width: 5px;
+    background-color:#186fbc ;
+  } */
+  
+  .row #icon{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #0d171f;
+    margin-right: 3px;
+  }
+
+  .row #icon svg{
+    align-self: center;
+  }
+  
+  .row #title{
+    flex: 50%;
+    font-size: 16px;
+    margin-left: 25px;
+    color: #000;
+  }
+
+  .subMenuList{
+    height: auto;
+    width: 80%;
+    padding: 0;
+    margin-left: 50px;
+  }
+  
+  .subMenuList .subMenuRow{
+    width: 60%;
+    height: 30px;
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    border-radius: 0 35px 35px 0; 
+
+  }
+  
+  .subMenuList .subMenuRow:hover{
+    cursor: pointer;
+  }
+
+  .subMenuList #icon{
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: #0d171f;
+    font-size: 14px;
+  }
+
+  .subMenuRow{
+    text-decoration: none;
+  }
+
+  .subMenuRow #icon svg{
+    align-self: center;
+  }
+  
+  .subMenuRow #title{
+    flex: 20%;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  
+
+  #close{
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .sidebar{
+      position: fixed;
+    }
+
+    #res-sidebar{
+      left: -100%;
+
+    }
+    #res-sidebar.active{
+      left: 0;
+    }
+
+    #close{
+      display: block;
+      height: fit-content;
+      top: 0px;
+      left: 20px
+    }
+
+    #close .menu-Icon{
+        font-size: 25px;
+        cursor: pointer;
+        height: 10%;
+        color: #fff;
+        position: absolute;
+        background-color: transparent;
+    }
+
+    #menu{
+      position: absolute;
+      height: fit-content;
+      width: fit-content;
+      top: 20px;
+      left: 20px;
+
+    }
+
+    #menu.hide{
+      display: none;
+    }
+    
+  }
