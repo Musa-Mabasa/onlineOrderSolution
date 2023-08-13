@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   if(!authenticated){
-    return <Navigate replace to='/login'/>;
+    return <Navigate replace to='/register'/>;
   }
   else{
     return (

@@ -11,7 +11,7 @@ function ConfigureProducts() {
   const [isLoading , setIsLoading] = useState(true);
 
   useEffect(() => {
-    api.get(`/games?key=53acb6f79186422ebd37a4aa3851861b`)
+    api.get(`/products`)
     .then(res => {
       setGameData(res.data['results']);
       setIsLoading(false);

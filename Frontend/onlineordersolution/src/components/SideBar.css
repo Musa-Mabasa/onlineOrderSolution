@@ -152,26 +152,29 @@
 
     #res-sidebar{
       left: -100%;
+      top: 0;
 
     }
     #res-sidebar.active{
       left: 0;
+
     }
 
     #close{
       display: block;
       height: fit-content;
       top: 0px;
-      left: 20px
+      left: 20px;
+      color: #000;
     }
 
     #close .menu-Icon{
         font-size: 25px;
         cursor: pointer;
         height: 10%;
-        color: #fff;
         position: absolute;
         background-color: transparent;
+        color: #000;
     }
 
     #menu{
@@ -180,7 +183,11 @@
       width: fit-content;
       top: 20px;
       left: 20px;
+      color: #000;
+    }
 
+    #menu .menu-Icon{
+        color: #000;
     }
 
     #menu.hide{

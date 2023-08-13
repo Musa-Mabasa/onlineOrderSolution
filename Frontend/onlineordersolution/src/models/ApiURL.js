@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://api.rawg.io/api'
+    baseURL: 'https://apiurl'
   })
 
   export default api;
