@@ -1,19 +1,19 @@
 import React, { useEffect , useState} from 'react'
 import '../components/Main.css'
-import Card from '../components/Card';
 import api from '../models/ApiURL';
 import CardSkeleton from '../components/SkeletonComponents/CardSkeleton';
+import EditCard from '../components/EditCard';
 
 
 
-function Home() {
-  const [data, setdata] = useState(null);
+function ConfigureProducts() {
+  const [GameData, setGameData] = useState(null);
   const [isLoading , setIsLoading] = useState(true);
 
   useEffect(() => {
-    api.get(`/shop`)
+    api.get(`/games?key=53acb6f79186422ebd37a4aa3851861b`)
     .then(res => {
-      setdata(res.data['results']);
+      setGameData(res.data['results']);
       setIsLoading(false);
     })
     .catch(err => {
@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <>
-    <div className='page-title'>Shop</div>
+    <div className='page-title'>My Products</div>
     <br></br>
     <br></br>
     <div className='card-grid'>
@@ -32,8 +32,8 @@ function Home() {
               <CardSkeleton key={index} />
             ))
           ) : (
-            data.slice(1).map((game, index) => (
-              <Card key={index} game={game} />
+            GameData.slice(1).map((game, index) => (
+              <EditCard key={index} game={game} />
             ))
           )}
       </div>
@@ -41,4 +41,4 @@ function Home() {
   )
 }
 
-export default Home
+export default ConfigureProducts

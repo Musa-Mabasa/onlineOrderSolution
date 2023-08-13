@@ -1,12 +1,12 @@
 import React, { useEffect , useState} from 'react'
 import '../components/Main.css'
-import GameCard from '../components/GameCard';
+import GameCard from '../components/Card';
 import api from '../models/ApiURL';
-import GameCardSkeleton from '../components/SkeletonComponents/GameCardSkeleton';
+import GameCardSkeleton from '../components/SkeletonComponents/CardSkeleton';
 
 
 
-function NewReleases() {
+function Orders() {
   const [GameData, setGameData] = useState(null);
   const [isLoading , setIsLoading] = useState(true);
 
@@ -41,4 +41,4 @@ function NewReleases() {
   )
 }
 
-export default NewReleases
+export default Orders

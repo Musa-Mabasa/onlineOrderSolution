@@ -1,12 +1,14 @@
 import React from 'react'
-import './GameCard.css'
+import './Card.css'
 
-function GameCard({game}) {
+function Card({game}) {
   const placeholderImage = 'https://publicsectornetwork.com/wp-content/uploads/2020/06/placeholder.jpg';
+
+  // style={{backgroundImage: `url(${game.background_image}), url(${placeholderImage})`}}
 
   return (
     <div className='game-card'>
-      <div className='card-image' style={{backgroundImage: `url(${game.background_image}), url(${placeholderImage})`}}></div>
+      <div className='card-image' style={{backgroundImage: `url(${placeholderImage})`}}></div>
       <div className='card-details'>
         <div className='card-title'>{game.name}</div>
       </div>
@@ -17,4 +19,4 @@ function GameCard({game}) {
   )
 }
 
-export default GameCard
+export default Card

@@ -7,10 +7,8 @@ function Login() {
   const navigate = useNavigate();
   const [username, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const [authenticated, setauthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
-  const users = [{ username: "Jane", password: "testpassword" }];
+
+  const users = [{ username: "Jane", password: "testpassword", usertype: false }];
   const handleLogin = (e) => {
     console.log("login");
     e.preventDefault();
@@ -19,6 +17,7 @@ function Login() {
     if (account && account.password === password) {
       console.log("logged in");
       localStorage.setItem("authenticated", true);
+      localStorage.setItem("user", JSON.stringify(account));
       navigate("/");
     }
   };

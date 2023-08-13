@@ -1,9 +1,9 @@
 import React from 'react';
-import './GameCardSkeleton.css';
+import './CardSkeleton.css';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-function GameCardSkeleton() {
+function CardSkeleton() {
   return (
     <div className='skeleton-game-card'>
         <br></br>
@@ -21,4 +21,4 @@ function GameCardSkeleton() {
   )
 }
 
-export default GameCardSkeleton
+export default CardSkeleton

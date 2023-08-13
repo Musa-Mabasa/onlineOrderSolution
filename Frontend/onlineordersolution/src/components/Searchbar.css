@@ -1,37 +1,3 @@
-/* .searchbar{
-    width: 500px;
-    height: 70px;
-}
-
-.searchInput{
-    display: flex;
-}
-
-.searchbar input{
-    background-color: #092746;
-    color: white;
-    height: 1rem;
-    width: 100%;
-    border-color: black;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 10px;
-
-
-}
-
-.searchbar button{
-    background-color: #186fbc;
-    padding: 10px;
-    border-color: black;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    cursor: pointer;
-} */
-
-
-/* Searchbar.css */
-
 .searchbar {
     width: 600px
   }
@@ -39,7 +5,7 @@
   .searchInput {
     display: flex;
     align-items: center;
-    border: 2px solid rgb(181, 180, 180);
+    border: 1px solid rgb(181, 180, 180);
     border-radius: 20px;
     overflow: hidden;
     height: 40px;
