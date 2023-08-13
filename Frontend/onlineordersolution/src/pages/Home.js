@@ -3,6 +3,7 @@ import '../components/Main.css'
 import Card from '../components/Card';
 import api from '../models/ApiURL';
 import CardSkeleton from '../components/SkeletonComponents/CardSkeleton';
+import { ShopData } from '../components/ShopData';
 
 
 
@@ -19,6 +20,9 @@ function Home() {
     .catch(err => {
       console.log(err);
     })
+    setTimeout(async() => {
+    setIsLoading(false);
+    }, 1500);
   }, [])
 
   return (
@@ -32,8 +36,8 @@ function Home() {
               <CardSkeleton key={index} />
             ))
           ) : (
-            data.slice(1).map((game, index) => (
-              <Card key={index} game={game} />
+            ShopData.map((card, index) => (
+              <Card key={index} data={card} />
             ))
           )}
       </div>

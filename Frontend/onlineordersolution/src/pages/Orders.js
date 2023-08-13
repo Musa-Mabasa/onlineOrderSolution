@@ -1,39 +1,43 @@
 import React, { useEffect , useState} from 'react'
 import '../components/Main.css'
-import GameCard from '../components/Card';
+import Card from '../components/Card';
 import api from '../models/ApiURL';
-import GameCardSkeleton from '../components/SkeletonComponents/CardSkeleton';
+import CardSkeleton from '../components/SkeletonComponents/CardSkeleton';
+import { ordersData } from '../components/OrdersData';
 
 
 
-function Orders() {
-  const [GameData, setGameData] = useState(null);
+function Order() {
+  const [data, setdata] = useState(null);
   const [isLoading , setIsLoading] = useState(true);
 
   useEffect(() => {
     api.get(`/orders`)
     .then(res => {
-      setGameData(res.data['results']);
+      setdata(res.data['results']);
       setIsLoading(false);
     })
     .catch(err => {
       console.log(err);
     })
+    setTimeout(async() => {
+      setIsLoading(false);
+      }, 1500);
   }, [])
 
   return (
     <>
-    <div className='page-title'>My orders</div>
+    <div className='page-title'>My Orders</div>
     <br></br>
     <br></br>
     <div className='card-grid'>
         {isLoading ? (
             Array.from({ length: 8 }).map((_, index) => (
-              <GameCardSkeleton key={index} />
+              <CardSkeleton key={index} />
             ))
           ) : (
-            GameData.slice(1).map((game, index) => (
-              <GameCard key={index} game={game} />
+            ordersData.map((card, index) => (
+              <Card key={index} data={card} />
             ))
           )}
       </div>
@@ -41,4 +45,4 @@ function Orders() {
   )
 }
 
-export default Orders
+export default Order

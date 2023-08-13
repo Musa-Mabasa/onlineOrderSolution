@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './EditCard.css';
 import SaveButton from './SaveButton';
 
-function EditCard({ game }) {
+function EditCard({ data }) {
   const placeholderImage =
     'https://publicsectornetwork.com/wp-content/uploads/2020/06/placeholder.jpg';
-  const [price, setPrice] = useState(400.0);
-  const [placeHolderTitle, setPlaceHolderTitle] = useState(game.name);
+  const [price, setPrice] = useState(data.price);
+  const [placeHolderTitle, setPlaceHolderTitle] = useState(data.title);
   const [title, setTitle] = useState('');
 
   const handleTitleChange = (e) => {
@@ -29,14 +29,12 @@ function EditCard({ game }) {
     console.log(placeHolderTitle, title)
   };
 
-  // style={{backgroundImage: `url(${game.background_image}), url(${placeholderImage})`}}
+  
   return (
     <div className='edit-card'>
       <div
         className='edit-card-image'
-        style={{
-          backgroundImage: `url(${placeholderImage})`,
-        }}
+        style={{backgroundImage: `url(${data.image}), url(${placeholderImage})`}}
       ></div>
       <div className='edit-card-details'>
         <input
@@ -48,7 +46,7 @@ function EditCard({ game }) {
         ></input>
       </div>
       <div className='edit-card-actions'>
-        <div>
+        <div className='toggle'>
         <button className='toggle-button' onMouseDown={increasePrice} >-</button>
         <input
           type='text'

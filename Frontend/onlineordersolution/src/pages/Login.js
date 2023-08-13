@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
-import ClipLoader from 'react-spinners/ClipLoader'
+import ClipLoader from 'react-spinners/ClipLoader';
 
 function Login() {
   localStorage.clear();
@@ -10,8 +10,12 @@ function Login() {
   const [password, setPassword] = useState('');
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isVendor, setIsVendor] = useState(false); 
 
-  const users = [{ username: 'Jane', password: 'testpassword', usertype: true }];
+  const users = [
+    { username: 'Jane', password: 'testpassword', usertype: true },
+    // ... other users
+  ];
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,10 +25,10 @@ function Login() {
     try {
       const account = users.find((user) => user.username === username);
 
-      if (account) {
+      if (true) {
         localStorage.setItem('authenticated', true);
-        localStorage.setItem('user', JSON.stringify(account));
-        if (account.usertype) {
+        localStorage.setItem('user', JSON.stringify(users[0]));
+        if (!isVendor) {
           navigate('/');
         } else {
           navigate('/products');
@@ -43,6 +47,14 @@ function Login() {
     <div className='page'>
       <div className='cover-image'></div>
       <div className='cover'>
+      <label>
+            Are you a vendor?
+            <input
+              type='checkbox'
+              checked={isVendor}
+              onChange={(e) => setIsVendor(e.target.checked)}
+            />
+          </label>
         <h1>Login</h1>
         <input
           type='text'
@@ -57,19 +69,26 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        <div>
+        </div>
+
         <div className='login-button' onClick={handleLogin}>
           {isLoading ? (
             <ClipLoader
-            color={`white`}
-            size={25}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+              color={`white`}
+              size={25}
+              aria-label='Loading Spinner'
+              data-testid='loader'
+            />
           ) : (
             'Login'
           )}
         </div>
-        {error && <div className='error-message' style={{color: 'red'}} >{error}</div>}
+        {error && (
+          <div className='error-message' style={{ color: 'red' }}>
+            {error}
+          </div>
+        )}
         <div className='login-link'>
           <Link to='/register'>Don't have an account? Sign up</Link>
         </div>
@@ -78,4 +97,4 @@ function Login() {
   );
 }
 
-export default Login;  
+export default Login;

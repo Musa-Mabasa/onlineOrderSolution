@@ -73,12 +73,13 @@
 }
 
 .card-actions{
+    width: 90%;
     display: flex;
     margin: 20px 10px;
     align-self: flex-start;
     height: fit-content;
-    justify-content: flex-start;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card-actions h2{
